@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "iBIqFTJjgXw=",
+  "success": true,
+  "projectFilePath": "/home/magicwheel/Documents/Code/Csharp/algorithms_practice/algorithms_practice.csproj",
+  "expectedPackageFiles": [
+    "/home/magicwheel/.nuget/packages/microsoft.aspnetcore.app.ref/9.0.4/microsoft.aspnetcore.app.ref.9.0.4.nupkg.sha512"
+  ],
+  "logs": []
+}

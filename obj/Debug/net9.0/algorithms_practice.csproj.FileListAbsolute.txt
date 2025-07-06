@@ -1,0 +1,14 @@
+/home/magicwheel/Documents/Code/Csharp/algorithms_practice/bin/Debug/net9.0/algorithms_practice
+/home/magicwheel/Documents/Code/Csharp/algorithms_practice/bin/Debug/net9.0/algorithms_practice.deps.json
+/home/magicwheel/Documents/Code/Csharp/algorithms_practice/bin/Debug/net9.0/algorithms_practice.runtimeconfig.json
+/home/magicwheel/Documents/Code/Csharp/algorithms_practice/bin/Debug/net9.0/algorithms_practice.dll
+/home/magicwheel/Documents/Code/Csharp/algorithms_practice/bin/Debug/net9.0/algorithms_practice.pdb
+/home/magicwheel/Documents/Code/Csharp/algorithms_practice/obj/Debug/net9.0/algorithms_practice.GeneratedMSBuildEditorConfig.editorconfig
+/home/magicwheel/Documents/Code/Csharp/algorithms_practice/obj/Debug/net9.0/algorithms_practice.AssemblyInfoInputs.cache
+/home/magicwheel/Documents/Code/Csharp/algorithms_practice/obj/Debug/net9.0/algorithms_practice.AssemblyInfo.cs
+/home/magicwheel/Documents/Code/Csharp/algorithms_practice/obj/Debug/net9.0/algorithms_practice.csproj.CoreCompileInputs.cache
+/home/magicwheel/Documents/Code/Csharp/algorithms_practice/obj/Debug/net9.0/algorithms_practice.dll
+/home/magicwheel/Documents/Code/Csharp/algorithms_practice/obj/Debug/net9.0/refint/algorithms_practice.dll
+/home/magicwheel/Documents/Code/Csharp/algorithms_practice/obj/Debug/net9.0/algorithms_practice.pdb
+/home/magicwheel/Documents/Code/Csharp/algorithms_practice/obj/Debug/net9.0/algorithms_practice.genruntimeconfig.cache
+/home/magicwheel/Documents/Code/Csharp/algorithms_practice/obj/Debug/net9.0/ref/algorithms_practice.dll
