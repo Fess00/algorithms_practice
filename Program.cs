@@ -117,36 +117,49 @@ namespace algorithms_practice
 			return bestTime;
 		}
 
-		private static long KostyaRewriteNumbers() 
+		private static long KostyaRewriteNumbers() // partly done 
 		{
 			List<int> countAndOperations = Console.ReadLine().Split(' ').Select(x => Convert.ToInt32(x)).ToList();
 			List<int> numbers = Console.ReadLine().Split(' ').Select(x => Convert.ToInt32(x)).ToList();
 			
-			// TODO: руками через for заполняем массив складывая все в dictionary of lists для каждого разряда
-			// затем сортируем и поубыванию проверяем есть ли разряд и так же по убывани в каждом разряде меняем знаки до момента когда у нас не кончатся операции или или данные
-			
 			long initialSum = numbers.Sum(x => x);
-			numbers.Sort();
-			
-			for (int i = countAndOperations[0] - 1; i >= 0 && countAndOperations[1] > 0; i--)
-			{
-				StringBuilder sb = new StringBuilder(numbers[i].ToString());
-				for (int j = 0; j < sb.Length; j++)
-				{
-					if (sb[j] != '9') sb[j] = '9';
-				}
-
-				numbers[i] = Convert.ToInt32(sb.ToString());
+			long sum = initialSum;
+            List<int> allAdds = new();
+			for (int i = 0; i < countAndOperations[0]; i++)
+	        {
+                int current = numbers[i], dim = 0;
+                while (current != 0)
+                {
+                    int n = 9 - (current % 10);
+                    n = dim > 0 ? n * (dim * 10) : n;
+                    if (n > 0)
+                        allAdds.Add(n);
+                    dim++;
+                    current /= 10;
+                }
 			}
-			
-			long resultSum = numbers.Sum(x => x);
+
+            if (allAdds.Count() < 0)
+                return 0;
+
+            allAdds.Sort();
+            
+            while (allAdds.Any() && countAndOperations[1] > 0)
+            {
+                sum += allAdds.Last();
+                allAdds.RemoveAt(allAdds.Count() - 1);
+                countAndOperations[1]--;
+            }
+
+            return sum - initialSum;
 		}
 		
 		static void Main(string[] args)
 		{
 			// Console.WriteLine(KostyaMobile());
 			// Console.WriteLine(VanyaSlice());
-			Console.WriteLine(KatyaPapers());
+			// Console.WriteLine(KatyaPapers());
+            Console.WriteLine(KostyaRewriteNumbers());
 		}
 	}
 }
