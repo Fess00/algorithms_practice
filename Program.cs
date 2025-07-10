@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace algorithms_practice
 {
@@ -119,39 +118,36 @@ namespace algorithms_practice
 
 		private static long KostyaRewriteNumbers() // partly done 
 		{
-			List<int> countAndOperations = Console.ReadLine().Split(' ').Select(x => Convert.ToInt32(x)).ToList();
-			List<int> numbers = Console.ReadLine().Split(' ').Select(x => Convert.ToInt32(x)).ToList();
+			List<int> countAndOperations = Console.ReadLine().Split(' ').Select(int.Parse).ToList();
+			List<int> numbers = Console.ReadLine().Split(' ').Select(int.Parse).ToList();
 			
-			long initialSum = numbers.Sum(x => x);
-			long sum = initialSum;
-            List<int> allAdds = new();
+			long sum = 0;
+            List<long> allAdds = new();
 			for (int i = 0; i < countAndOperations[0]; i++)
 	        {
-                int current = numbers[i], dim = 0;
-                while (current != 0)
+                int current = numbers[i], dim = 1;
+                while (current > 0)
                 {
-                    int n = 9 - (current % 10);
-                    n = dim > 0 ? n * (dim * 10) : n;
-                    if (n > 0)
-                        allAdds.Add(n);
-                    dim++;
+                    int n = current % 10;
+                    long diff = 9 - n;
+                    if (diff > 0)
+                        allAdds.Add(diff * dim);
                     current /= 10;
+                    dim *= 10;
                 }
 			}
 
-            if (allAdds.Count() < 0)
+            if (!allAdds.Any())
                 return 0;
 
-            allAdds.Sort();
-            
-            while (allAdds.Any() && countAndOperations[1] > 0)
+            allAdds.Sort((a, b) => b.CompareTo(a));
+
+            for (int i = 0; i < Math.Min(countAndOperations[1], allAdds.Count); i++)
             {
-                sum += allAdds.Last();
-                allAdds.RemoveAt(allAdds.Count() - 1);
-                countAndOperations[1]--;
+                sum += allAdds[i];
             }
 
-            return sum - initialSum;
+            return sum;
 		}
 		
 		static void Main(string[] args)
